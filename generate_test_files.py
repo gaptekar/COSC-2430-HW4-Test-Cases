@@ -1,11 +1,16 @@
+"""
+Gabriel Aptekar
+Creates the test cases using the functions I created in the other file
+"""
 from tree_tools import V_test_case,balanced_test_case,unbalanced_test_case
 import sys
-sys.setrecursionlimit(1100)
+sys.setrecursionlimit(1100) #python isn't really designed for this
 
 
-for i in [2,5,10,20,50,100,200,500,1000]:
-    balanced_test_case( list(range(1,i+1)),i)
-for i in [2,5,10,20,50,100,200,500,1000]:
-    unbalanced_test_case( list(range(1,i+1)),i)    
-for i in [2,5,10,20,50,100,200,500,1000]:
-    V_test_case( list(range(1,i+1)),i)
+#create the test cases
+cases=[2,5,10,20,50,100,200,500,1000]
+for case in cases:
+    args=[list(range(case)), case]
+    balanced_test_case   (*args)
+    unbalanced_test_case (*args)
+    V_test_case          (*args)
